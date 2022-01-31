@@ -20,7 +20,7 @@ namespace BookReviewsAPI.Controllers
             try
             {
                 BookRecomendationBL blObj = new BookRecomendationBL();
-                List<BookDTO> lstOfDept = blObj.bookDTO();
+                List<BookDTO> lstOfDept = blObj.GetRatings();
                 if (lstOfDept.Count > 0)
                     return Request.CreateResponse(HttpStatusCode.OK, lstOfDept);
                 else
