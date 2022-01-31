@@ -40,7 +40,7 @@ namespace BookRecomendationDataAccessLayer
                 try
                 {
 
-                    SqlCommand conOb = new SqlCommand(@"select BookRating, BookName , BookReview from Production.Product where ListPrice>10", conObj);
+                    SqlCommand conOb = new SqlCommand(@"select BookRating, BookName , BookReview ", conObj);
                     conObj.Open();
                     SqlDataReader dept = conOb.ExecuteReader();
                     //while (dept.Read())
