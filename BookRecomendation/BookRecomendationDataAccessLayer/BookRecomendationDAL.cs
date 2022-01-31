@@ -13,16 +13,36 @@ namespace BookRecomendationDataAccessLayer
     //DO NOT MODIFY THE METHOD NAMES : Adding of parameters / changing the return types of the given methods may be required.
     public class BookRecomendationDAL
     {
-       
 
-
-
-        public void FetchReviewsForBook()
+        SqlConnection conObj;
+        SqlCommand cmdObj;
+        public BookRecomendationDAL()
         {
+            conObj = new SqlConnection(ConfigurationManager.ConnectionStrings["AdvWorksConnectionStr"].ConnectionString);
+            //contextObj = new AdventureWorks2012Context();
+        }
+
+        public int ConnectionToDB()
+        {
+            try
+            {
+                BookRecomendationDAL dalObj = new BookRecomendationDAL();
+                return dalObj.ConnectionToDB();
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+
+
+            public void FetchReviewsForBook()
+        {
+
         }
 
         public void SaveReviewForBookToDB()
         {
+
         }
 
 }
