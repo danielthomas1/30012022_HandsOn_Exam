@@ -35,7 +35,7 @@ namespace BookRecomendationBusinessLayer
         public void AddReviewForBook()
         {
             BookRecomendationDAL dalObj = new BookRecomendationDAL();
-            return dalObj.Insertreviewforbook(newbookobj, out newbookId);
+            return dalObj.Insertreviewforbook(newbookobj, out newBookReview);
         }
       
     }

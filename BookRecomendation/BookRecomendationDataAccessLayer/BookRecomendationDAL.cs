@@ -51,9 +51,9 @@ namespace BookRecomendationDataAccessLayer
                     while (dept.Read())
                     {
                         BookDTO bkDTO = new BookDTO();
-                        bkDTO.BookRating = Convert.ToInt32(dept["ProductID"]);
-                        bkDTO.BookName = dept["Name"].ToString();
-                        bkDTO.BookReview = Convert.ToString(dept["ListPrice"]);
+                        bkDTO.BookRating = Convert.ToInt32(dept["BookRating"]);
+                        bkDTO.BookName = dept["BookName"].ToString();
+                        bkDTO.BookReview = Convert.ToString(dept["BookReview"]);
                         ListProduct.Add(bkDTO);
                     }
                     return ListProduct;
