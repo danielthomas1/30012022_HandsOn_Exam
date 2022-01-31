@@ -16,20 +16,39 @@ namespace BookRecomendationWebApp.Controllers
     public class RecomendBookController : Controller
     {
         // GET: RecomendBook
+
+        BookRecomendationBL blObj;
         public ActionResult Index()
         {
             return View();
         }
 
 
-
+        
         public void AddReviews()
         {
 
         }
 
-        public void DisplayResultsUsingWebAPI()
+        public ActionResult DisplayResultsUsingWebAPI()
         {
+            try
+            {
+                List<BookDTO> lstBook = blObj.GetAllBookNames();
+                foreach (var book in lstBook)
+                {
+                    bookViewModel newObj = new ProductViewModel();
+                    newObj.BookName = book.BookName;
+                    newObj.bookRating = book.BookRating;
+                    newObj.ProductColor = book.BookReview;
+                    lstbookModel.Add(newObj);
+                }
+                return View(lstbookModel);
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
         }
     }
 }

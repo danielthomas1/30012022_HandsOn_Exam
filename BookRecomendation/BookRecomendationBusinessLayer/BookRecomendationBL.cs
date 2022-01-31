@@ -25,6 +25,12 @@ namespace BookRecomendationBusinessLayer
                 return -89;
             }
         }
+
+        public List<BookDTO> GetRatings()
+        {
+            throw new NotImplementedException();
+        }
+
         public void ShowReviewsForBook()
         {
             BookRecomendationDAL dalObj = new BookRecomendationDAL();
